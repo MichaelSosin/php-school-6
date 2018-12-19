@@ -59,8 +59,15 @@ class Student {
     }
 }
 
-$student1 = new Student('vasya', 'pupkin', 'male', 'freshman', 3.5);
+$students = array(
+    new Student('Mike', 'Barnes', 'male', 'freshman', 4),
+    new Student('Jim', 'Nickerson', 'male', 'sophomore', 3),
+    new Student('Jack', 'Indabox', 'male', 'junior', 2.5),
+    new Student('Jane', 'Miller', 'female', 'senior', 3.6),
+    new Student('Mary', 'Scott', 'female', 'senior', 2.7)
+);
 
-$student1->setStudyTime(3);
+foreach($students as $student) {
+    $student->introduce();
+}
 
-$student1->introduce();

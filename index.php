@@ -30,7 +30,7 @@ class Student {
 
     public function introduce() {
         echo 'Name: ' . $this->_firstName . ' ' . $this->_lastName . ', ' . $this->_gender . PHP_EOL;
-        echo 'Status: ' . $this->_status . ', Grade Point Average: ' . $this->_gpa . PHP_EOL;
+        echo 'Status: ' . $this->_status . ', Grade Point Average: ' . round($this->_gpa, 2) . PHP_EOL;
     }
 
     public function setStudyTime($studyTime) {
@@ -71,3 +71,12 @@ foreach($students as $student) {
     $student->introduce();
 }
 
+$studentsStudyTime = array(60, 100, 40, 30, 1000);
+
+foreach($students as $index => $student) {
+    $student->setStudyTime($studentsStudyTime[$index] / 60);
+}
+
+foreach($students as $student) {
+    $student->introduce();
+}
